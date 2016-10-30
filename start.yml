@@ -1,0 +1,10 @@
+version: '2'
+services:
+  supervisor:
+    image: centos-supervisor:v0.5
+    ports:
+      - "2222:22"
+      - "9111:9111"
+#    volumes:
+#      - /mnt/home/vchaves/.ssh/vchaves.pub:/home/appuser/.ssh/authorized_keys
+#      - /mnt/home/vchaves/.ssh/vchaves.pub:/root/.ssh/authorized_keys

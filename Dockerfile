@@ -65,11 +65,11 @@ RUN echo 'alias vi="vim"' >> /root/.bash_profile
 RUN echo 'syntax on'      >> /home/appuser/.vimrc
 RUN echo 'alias vi="vim"' >> /home/appuser/.bash_profile
 
-
+RUN echo "TESTE" >>/home/appuser/teste.txt
 
 # Config Supervisor
 ADD supervisord.conf /etc/
-RUN chmod 600 /etc/supervisord.conf /etc/supervisord.d/*.ini
+RUN chmod 600 /etc/supervisord.conf /etc/supervisord.d/
 
 #Start Supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
